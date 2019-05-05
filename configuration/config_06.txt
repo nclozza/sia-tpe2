@@ -1,0 +1,19 @@
+data_file              ./terrain/terrain03.data
+layers                 3
+neurons_per_layer      2,30,30,1
+activation_function    tanh
+saturation_value       10000
+cut_condition_value    0.002
+epsilon                0.05
+
+momentum_enabled       0
+alpha                  0.5
+
+eta                    0.01
+adaptative_eta_enabled 0
+eta_check_steps        10
+eta_increment          0.005
+eta_decrement          0.5
+
+epochs                 500
+percentage             70

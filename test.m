@@ -1,6 +1,6 @@
 perceptron = Perceptron();
 
-[patterns, expected_outputs] = load_normalized_data('./terrain/terrain03.data');
+[patterns, expected_outputs] = load_normalized_data(perceptron.data_file);
 data_size = size(patterns)(1);
 
 %for testing set

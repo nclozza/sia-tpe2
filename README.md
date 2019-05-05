@@ -6,4 +6,4 @@ Instrucciones de uso:
 2. Abrir Octave y situarse en el directorio que contiene dichos archivos, para que reconozca todas las funciones a utilizar.
 3. En el archivo “test.m” se encuentran los comandos como ejemplo para entrenar una red neuronal.
 4. El archivo “Perceptron.m” contiene la clase con las variables seteadas por defecto para usar como prueba. 
-5. En la carpeta “perceptron_tests” hay otros ejemplos de clases de perceptrón con distintas variables seteadas.
+5. En la carpeta “configuration” se encuentran los distintos archivos de configuración. El path al archivo de configuración deseado debe modificarse en el constructor del Perceptron.
