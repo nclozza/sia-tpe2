@@ -33,10 +33,11 @@ classdef Perceptron
 
 	methods
 	
-	function this = Perceptron()
+	function this = Perceptron(config)
     
     %configuration file
-    CONFIG_FILE = './configuration/config_01.txt';
+    CONFIG_FILE = strcat('./configuration/config_', config);
+    CONFIG_FILE = strcat(CONFIG_FILE,'.txt');
     
     %Activation functions and their derivatives
     tanh = @tanh;

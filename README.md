@@ -4,6 +4,5 @@ SIA TPE2
 Instrucciones de uso:
 1. Descargar todos los archivos .m y la carpeta “terrain”.
 2. Abrir Octave y situarse en el directorio que contiene dichos archivos, para que reconozca todas las funciones a utilizar.
-3. En el archivo “test.m” se encuentran los comandos como ejemplo para entrenar una red neuronal.
-4. El archivo “Perceptron.m” contiene la clase con las variables seteadas por defecto para usar como prueba. 
-5. En la carpeta “configuration” se encuentran los distintos archivos de configuración. El path al archivo de configuración deseado debe modificarse en el constructor del Perceptron.
+3. En el archivo "commands.m” se encuentran los comandos como ejemplo para entrenar, testear y obtener parámetros y gráficos una red neuronal. 
+4. En la carpeta “configuration” se encuentran los distintos archivos de configuración. 

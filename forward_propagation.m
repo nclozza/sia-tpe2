@@ -1,7 +1,6 @@
-function [h,V,saturation] = forward_propagation(input_vector, layers, w_network, activation)
+function [h,V] = forward_propagation(input_vector, layers, w_network, activation)
 	h = {};
 	V = {};
-	saturation = 0;
 	last_layer = input_vector;
 	for i = 1:layers
 		h{i} = w_network{i} * last_layer;
