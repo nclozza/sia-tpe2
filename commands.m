@@ -3,7 +3,7 @@
 %-----------------------------
 
 %param: number of configuration file
-perceptron = Perceptron('08');
+perceptron = Perceptron('01');
 
 [patterns, expected_outputs] = load_normalized_data(perceptron.data_file);
 data_size = size(patterns)(1);
@@ -40,5 +40,5 @@ get_training_metrics(output);
 get_testing_metrics(output);
 plot_expected_and_obtained_outputs(patterns, expected_outputs, output);
 plot_obtained_output(patterns, output);
-%plot_eta_variation(output);
-%plot_ecm_variation(output);
+plot_eta_variation(output, perceptron);
+plot_mse_variation(output);

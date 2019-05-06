@@ -48,6 +48,7 @@ function output = train_all_data(perceptron, output, data_size, patterns, expect
 			%check cut condition
 			if output.ecm < perceptron.cut_condition_value
 				output.cut_condition = 1;
+				output.epoch_count_index++;
 				break;
 			end
 
