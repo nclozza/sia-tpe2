@@ -5,7 +5,7 @@
 %param: number of configuration file
 perceptron = Perceptron('01');
 
-[patterns, expected_outputs] = load_normalized_data(perceptron.data_file);
+[patterns, expected_outputs, x1_abs_max, x2_abs_max, z_abs_max] = load_normalized_data(perceptron.data_file);
 data_size = size(patterns)(1);
 
 %random initial weights
@@ -17,16 +17,17 @@ output = Output(w_network);
 %---Training commands---
 %-----------------------
 
-%train with all data
-%output = train_all_data(perceptron, output, data_size, patterns, expected_outputs, w_network, last_w_variation);
+%set epochs to be run
+%perceptron.epochs = 500;
 
-%train with given percentage of the data
-output = train_percentage_data(perceptron, output, data_size, patterns, expected_outputs, w_network, last_w_variation);
+%train with given percentage of the data, with incremental or batch mode
+output = train_incremental(perceptron, output, data_size, patterns, expected_outputs, w_network, last_w_variation);
+output = train_batch(perceptron, output, data_size, patterns, expected_outputs, w_network, last_w_variation);
 
 
-%-----------------------
+%----------------------
 %---Testing commands---
-%-----------------------
+%----------------------
 
 output = test_all_data(perceptron, output, data_size, patterns, expected_outputs);
 output = test_non_trained_data(perceptron, output, data_size, patterns, expected_outputs);
@@ -38,7 +39,8 @@ output = test_non_trained_data(perceptron, output, data_size, patterns, expected
 
 get_training_metrics(output);
 get_testing_metrics(output);
-plot_expected_and_obtained_outputs(patterns, expected_outputs, output);
-plot_obtained_output(patterns, output);
+plot_expected_and_obtained_outputs(patterns, expected_outputs, output, x1_abs_max, x2_abs_max, z_abs_max);
+plot_expected_output(patterns, expected_outputs, x1_abs_max, x2_abs_max, z_abs_max);
+plot_obtained_output(patterns, output, x1_abs_max, x2_abs_max, z_abs_max);
 plot_eta_variation(output, perceptron);
 plot_mse_variation(output);

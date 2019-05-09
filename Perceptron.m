@@ -41,9 +41,9 @@ classdef Perceptron
     
     %Activation functions and their derivatives
     tanh = @tanh;
-		tanh_d = @(x)(1 - x.^2);
-		exp = @(x)(1./(1 + exp(-x)));
-		exp_d = @(x)(x.*(1-x));
+	tanh_d = @(x)(1 - x.^2);
+	exp = @(x)(1./(1 + exp(-x)));
+	exp_d = @(x)(x.*(1-x));
     
     %Get all parameters from the file
     file = fopen(CONFIG_FILE);

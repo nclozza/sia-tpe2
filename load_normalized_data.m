@@ -1,4 +1,4 @@
-function [patterns, expected_outputs] = load_normalized_data(file)
+function [patterns, expected_outputs, x1_abs_max, x2_abs_max, z_abs_max] = load_normalized_data(file)
         
     M = dlmread(file)(2:end,:);
     X1X2Z = [M(:,1:end)];
