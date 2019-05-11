@@ -18,6 +18,7 @@ function output = train_batch(perceptron, output, data_size, patterns, expected_
 			[h,V] = forward_propagation(input_vector, perceptron.layers, output.w_network, perceptron.activation);
 
 			%check saturation
+			#{
 			for i=1:perceptron.layers
 				for j = 1:size(h{i})(1)
 					if h{i}(j,1) > perceptron.saturation_value
@@ -29,6 +30,7 @@ function output = train_batch(perceptron, output, data_size, patterns, expected_
 			if output.saturation == 1
 				break;
 			end
+			#}
 
 			output.network_outputs(training_counter) = V{perceptron.layers};
 
@@ -51,7 +53,7 @@ function output = train_batch(perceptron, output, data_size, patterns, expected_
 			[output.errors, output.ecm, output.train_data_accuracy] = calculate_errors_and_accuracy(1, output.network_outputs, expected_outputs, perceptron.epsilon);
 			output.ecm_record(output.epoch_count_index) = output.ecm;
 
-			printf('MSE: %g\n', output.ecm);
+			%printf('MSE: %g\n', output.ecm);
 
 			%set only on first epoch
 			if ep == 1
